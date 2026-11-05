@@ -351,6 +351,39 @@ h3{font-size:32px;font-weight:700;letter-spacing:-.02em}
 #refs h4{font:600 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--cyanD);margin:16px 0 8px;break-after:avoid}
 #refs a{display:block;break-inside:avoid;color:#1e293b;text-decoration:none;font-size:14px;line-height:1.3;padding:6px 0;border-bottom:1px solid rgba(15,23,42,.06)}
 #refs a:hover{color:var(--blue)}
+
+/* Ajustes limitados a las diapositivas 4–6: se conserva el tema original. */
+#platforms .frame{gap:24px}
+#platforms .duo{flex:1;max-height:450px}
+#platforms .plat{gap:18px}
+#platforms .platform-others .others{display:grid;grid-template-columns:230px 1fr 1fr;gap:30px;padding:22px 28px}
+#platforms .mini span{font-size:20px;line-height:1.35;display:block;margin-top:5px}
+#platforms .others .lbl{line-height:1.5}
+.capture-demo{padding:32px 48px;gap:14px}
+.capture-demo .dbody{grid-template-columns:350px minmax(0,1fr);align-items:center;gap:26px}
+.capture-demo .steps{gap:18px}
+.capture-demo .steps .s{align-items:flex-start;padding:20px 18px}
+.capture-demo .steps p{font-size:20px;line-height:1.35;color:var(--mute);margin-top:9px}
+.capture-demo .steps .s b{font-size:24px}
+.capture-demo .dhead .title{font-size:48px}
+#gee-demo .dhead .title{font-size:46px}
+.capture-gallery{min-width:0}
+.capture-tabs{display:flex;gap:10px;padding:12px 16px;background:#f8fafc;border-bottom:1px solid var(--line)}
+.capture-tabs button{font:600 18px Inter,system-ui,sans-serif;padding:10px 16px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--mute);cursor:pointer}
+.capture-tabs button[aria-selected="true"]{color:var(--blue);border-color:rgba(37,99,235,.45);background:rgba(37,99,235,.08)}
+.capture-tabs button:focus-visible{outline:3px solid var(--cyanD);outline-offset:3px}
+.capture-panel[hidden]{display:none}
+.capture-stage{height:450px;position:relative;overflow:hidden;background:#eef2f7;display:flex;align-items:center;justify-content:center}
+.capture-stage img{display:block;width:100%;height:100%;object-fit:contain}
+.capture-stage.editor-code img{position:absolute;width:231%;height:auto;max-width:none;left:-55.7%;top:-20%}
+.capture-stage.editor-result img{position:absolute;width:100%;height:auto;max-width:none;left:0;bottom:0}
+.capture-panel figcaption{min-height:54px;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 16px;font-size:17px;line-height:1.25;color:var(--mute);background:#fff}
+.capture-panel figcaption a{color:var(--blue);text-decoration:none;white-space:nowrap;font-size:15px}
+.capture-demo .case-note{display:grid;grid-template-columns:360px 1fr;gap:26px;align-items:center;padding:14px 22px;flex:none}
+.capture-demo .case-note h3{font-size:24px;line-height:1.15;margin-top:7px}
+.capture-demo .case-note p{font-size:22px;line-height:1.35;color:#334155}
+#gee-demo .case-note{grid-template-columns:490px 1fr}
+.capture-demo .vcred{margin:0;text-align:left;font-size:14px;line-height:1.3}
 </style>
 </head>
 <body>
@@ -513,84 +546,113 @@ h3{font-size:32px;font-weight:700;letter-spacing:-.02em}
   </section>
 
   <!-- ===== 4 · PLATAFORMAS ===== -->
-  <section class="scene" data-x="6700" data-y="460" data-r="-2" data-title="Plataformas masivas">
+  <section class="scene" data-x="6700" data-y="460" data-r="-2" id="platforms" data-title="Plataformas destacadas">
     <div class="frame">
       <header class="rv">
         <div class="kicker"><span class="num">02</span><span class="who" data-who="1"></span></div>
-        <h2 class="title">Plataformas <span class="grad">masivas</span></h2>
+        <h2 class="title sm">Plataformas destacadas <span class="grad">de GIS en la nube</span></h2>
       </header>
       <div class="duo">
         <article class="card plat arc rv left">
-          <div class="plat-head"><div class="logo"><svg class="ic"><use href="#i-layers"/></svg></div><div><h3>ArcGIS Online</h3><span class="sub">Esri · SaaS · estándar de la industria</span></div></div>
+          <div class="plat-head"><div class="logo"><svg class="ic"><use href="#i-layers"/></svg></div><div><h3>ArcGIS Online</h3><span class="sub">Esri · Creación y publicación de mapas</span></div></div>
           <ul class="ticks">
-            <li class="pop">Crear y compartir mapas y apps</li>
-            <li class="pop">Análisis espacial en el navegador</li>
-            <li class="pop">Colaboración en la organización</li>
+            <li class="pop">Crear mapas y aplicaciones web interactivas.</li>
+            <li class="pop">Publicar, compartir y gestionar información geográfica.</li>
+            <li class="pop">Realizar análisis espaciales y colaborar entre equipos.</li>
           </ul>
-          <div class="callout amber pop"><svg class="ic"><use href="#i-lock"/></svg><div><b>Cuenta pública vs. organizacional</b><span>Gratis = todo visible para cualquiera. Mapas privados = cuenta paga.</span></div></div>
+          <div class="callout amber pop"><svg class="ic"><use href="#i-lock"/></svg><div><b>Cuenta pública vs. organizacional</b><span>Pública: gratuita y con funciones limitadas. Organizacional: más herramientas, capas alojadas y colaboración privada.</span></div></div>
         </article>
         <div class="vs rv">vs</div>
         <article class="card plat gee rv right">
-          <div class="plat-head"><div class="logo"><svg class="ic"><use href="#i-sat"/></svg></div><div><h3>Google Earth Engine</h3><span class="sub">Google · análisis satelital en la nube</span></div></div>
+          <div class="plat-head"><div class="logo"><svg class="ic"><use href="#i-sat"/></svg></div><div><h3>Google Earth Engine</h3><span class="sub">Google · Análisis geoespacial a gran escala</span></div></div>
           <ul class="ticks">
-            <li class="pop">Imágenes satelitales históricas y actuales</li>
-            <li class="pop">Se analizan sin descargarlas</li>
-            <li class="pop">Cómputo de Google, sin hardware propio</li>
+            <li class="pop">Analizar grandes volúmenes de imágenes satelitales.</li>
+            <li class="pop">Estudiar cambios del territorio a lo largo del tiempo.</li>
+            <li class="pop">Automatizar análisis mediante scripts.</li>
           </ul>
-          <div class="callout green pop"><svg class="ic"><use href="#i-spark"/></svg><div><b>Gratis para educación e investigación</b><span>Ambiente · agricultura · agua · biodiversidad</span></div></div>
+          <div class="callout green pop"><svg class="ic"><use href="#i-spark"/></svg><div><b>Acceso gratuito para usos académicos</b><span>Disponible sin costo para educación e investigación no comercial elegibles, sujeto a sus condiciones.</span></div></div>
         </article>
       </div>
-      <div class="strip2">
+      <div class="platform-others">
         <div class="card others rv">
-          <span class="lbl">También</span>
-          <div class="mini pop"><b>Mapbox</b><span>Mapas dentro de apps</span></div>
-          <div class="mini pop"><b>CARTO</b><span>Ubicación para analistas</span></div>
+          <span class="lbl">Otras plataformas<br>destacadas</span>
+          <div class="mini pop"><b>Mapbox</b><span>Mapas personalizados para aplicaciones web y móviles.</span></div>
+          <div class="mini pop"><b>CARTO</b><span>Análisis geográfico para decisiones empresariales.</span></div>
         </div>
-        <div class="takeaway rv"><svg class="ic"><use href="#i-check"/></svg><span>PostGIS + servidor de mapas de los Labs → <b>ya instalados y escalados.</b></span></div>
       </div>
-      <div class="fsrc rv">Fuentes: Esri · Esri Community · Google Earth Engine · G2</div>
+      <div class="fsrc rv">Fuentes: Esri · Google Earth Engine · Mapbox · CARTO · R: bibliografía</div>
     </div>
   </section>
 
   <!-- ===== 5 · DEMO ARCGIS ===== -->
-  <section class="scene" data-x="8900" data-y="-300" data-r="3" data-title="Demo · ArcGIS Online">
-    <div class="frame demo">
-      <div class="dhead rv"><span class="rec">DEMO</span><h2 class="title">ArcGIS Online: <span class="grad">de un .zip a un mapa</span></h2></div>
+  <section class="scene" id="arcgis-demo" data-x="8900" data-y="-300" data-r="3" data-title="ArcGIS Online">
+    <div class="frame demo capture-demo">
+      <div class="dhead rv"><span class="rec">DEMO</span><h2 class="title">ArcGIS Online: <span class="grad">crear y compartir mapas</span></h2></div>
       <div class="dbody">
         <div class="steps rv left">
-          <div class="s pop"><span class="n">1</span><b>Agregar capa desde archivo</b></div>
-          <div class="s pop"><span class="n">2</span><b>Crear capa alojada</b></div>
-          <div class="s pop"><span class="n">3</span><b>Guardar y compartir</b></div>
+          <div class="s pop"><span class="n">1</span><div><b>Cargar datos geográficos</b><p>Importar información desde archivos o capas disponibles.</p></div></div>
+          <div class="s pop"><span class="n">2</span><div><b>Crear el mapa</b><p>Visualizar las capas y configurar cómo se muestran.</p></div></div>
+          <div class="s pop"><span class="n">3</span><div><b>Guardar y compartir</b><p>Definir quién puede acceder al mapa y compartirlo mediante un enlace.</p></div></div>
         </div>
-        <div class="rv zoom">
+        <div class="capture-gallery rv zoom" data-gallery>
           <div class="win"><div class="win-in">
-            <div class="tbar"><i></i><i></i><i></i><div class="addr"><svg class="ic"><use href="#i-lock"/></svg>arcgis.com · Map Viewer</div><a class="yt" data-ytlink target="_blank" rel="noopener">YouTube ↗</a></div>
-            <div class="vid" data-yt="tSNgrBj8TNU" data-start="86" data-end="235"></div>
+            <div class="tbar"><i></i><i></i><i></i><div class="addr"><svg class="ic"><use href="#i-lock"/></svg>ArcGIS Online</div><span class="tag">Capturas reales</span></div>
+            <div class="capture-tabs" role="tablist" aria-label="Capturas de ArcGIS Online"><button type="button" id="arc-1-tab" role="tab" aria-controls="arc-1" aria-selected="true" tabindex="0">1 · Interfaz</button><button type="button" id="arc-2-tab" role="tab" aria-controls="arc-2" aria-selected="false" tabindex="-1">2 · Compartir</button><button type="button" id="arc-3-tab" role="tab" aria-controls="arc-3" aria-selected="false" tabindex="-1">3 · Caso OSI</button></div>
+            <figure class="capture-panel" id="arc-1" role="tabpanel" aria-labelledby="arc-1-tab">
+              <div class="capture-stage "><img src="assets/arcgis-map-viewer.png" alt="Map Viewer de ArcGIS Online con un mapa de salud por condado y sus herramientas de capas." width="1080" draggable="false"></div>
+              <figcaption>Interfaz general · ejemplo de la documentación; no corresponde a OSI. <a href="https://doc.arcgis.com/en/arcgis-online/get-started/get-started-with-mv.htm" target="_blank" rel="noopener">© Esri ↗</a></figcaption>
+            </figure>
+            <figure class="capture-panel" id="arc-2" role="tabpanel" aria-labelledby="arc-2-tab" hidden>
+              <div class="capture-stage "><img src="assets/arcgis-share.png" alt="Ventana Share de ArcGIS Online con las opciones Owner y Everyone (public)." width="1080" draggable="false"></div>
+              <figcaption>Compartir · ejemplo con cuenta pública; las opciones dependen de la cuenta. <a href="https://learn.arcgis.com/en/projects/make-a-map/" target="_blank" rel="noopener">Esri · CC BY-NC-SA ↗</a></figcaption>
+            </figure>
+            <figure class="capture-panel" id="arc-3" role="tabpanel" aria-labelledby="arc-3-tab" hidden>
+              <div class="capture-stage "><img src="assets/osi-dashboard.jpg" alt="Dashboard OSI Current Land Holdings con mapa, indicadores y gráfico de propiedades." width="1080" draggable="false"></div>
+              <figcaption>Caso real · dashboard de Open Space Institute publicado por Esri. <a href="https://www.esri.com/en-us/lg/product/open-space-institute-case-study" target="_blank" rel="noopener">© OSI / Esri ↗</a></figcaption>
+            </figure>
           </div></div>
-          <div class="vcred">Video: “How to Upload Shapefiles in ArcGIS Online [Map Viewer]” — GEODENSITY (YouTube)</div>
         </div>
       </div>
+      <aside class="card case-note rv"><div><span class="tag">Caso real · Estados Unidos</span><h3>Open Space Institute</h3></div><p>Implementó ArcGIS Online para centralizar sus mapas y facilitar el acceso a información geográfica entre empleados de diferentes oficinas.</p></aside>
+      <div class="vcred rv">Capturas: documentación de Esri y caso OSI · Selección manual: clic o ← / → dentro de las pestañas · R: fuentes</div>
     </div>
   </section>
 
   <!-- ===== 6 · DEMO EARTH ENGINE ===== -->
-  <section class="scene" data-x="11100" data-y="500" data-r="-3" data-title="Demo · Earth Engine">
-    <div class="frame demo">
-      <div class="dhead rv"><span class="rec">DEMO</span><h2 class="title">Earth Engine: <span class="gradg">análisis en la nube</span></h2></div>
+  <section class="scene" id="gee-demo" data-x="11100" data-y="500" data-r="-3" data-title="Google Earth Engine">
+    <div class="frame demo capture-demo">
+      <div class="dhead rv"><span class="rec">DEMO</span><h2 class="title">Google Earth Engine: <span class="gradg">análisis de datos a gran escala</span></h2></div>
       <div class="dbody">
         <div class="steps rv left">
-          <div class="s pop"><span class="n">1</span><b>Escribir el script en el Code Editor</b></div>
-          <div class="s pop"><span class="n">2</span><b>Run: procesan los servidores de Google</b></div>
-          <div class="s pop"><span class="n">3</span><b>Resultado en el mapa</b></div>
+          <div class="s pop"><span class="n">1</span><div><b>Escribir un script</b><p>Indicar qué datos queremos analizar utilizando JavaScript en el editor web.</p></div></div>
+          <div class="s pop"><span class="n">2</span><div><b>Ejecutar el análisis</b><p>Earth Engine utiliza la infraestructura de Google para procesar los datos.</p></div></div>
+          <div class="s pop"><span class="n">3</span><div><b>Visualizar resultados</b><p>Representar en el mapa la información obtenida.</p></div></div>
         </div>
-        <div class="rv zoom">
+        <div class="capture-gallery rv zoom" data-gallery>
           <div class="win"><div class="win-in">
-            <div class="tbar"><i></i><i></i><i></i><div class="addr"><svg class="ic"><use href="#i-lock"/></svg>code.earthengine.google.com</div><a class="yt" data-ytlink target="_blank" rel="noopener">YouTube ↗</a></div>
-            <div class="vid" data-yt="XHH5MBvnSkg" data-start="20" data-end="400"></div>
+            <div class="tbar"><i></i><i></i><i></i><div class="addr"><svg class="ic"><use href="#i-lock"/></svg>Google Earth Engine</div><span class="tag">Capturas reales</span></div>
+            <div class="capture-tabs" role="tablist" aria-label="Capturas de Google Earth Engine"><button type="button" id="gee-1-tab" role="tab" aria-controls="gee-1" aria-selected="true" tabindex="0">1 · Interfaz</button><button type="button" id="gee-2-tab" role="tab" aria-controls="gee-2" aria-selected="false" tabindex="-1">2 · Script</button><button type="button" id="gee-3-tab" role="tab" aria-controls="gee-3" aria-selected="false" tabindex="-1">3 · Resultado</button><button type="button" id="gee-4-tab" role="tab" aria-controls="gee-4" aria-selected="false" tabindex="-1">4 · Caso JRC</button></div>
+            <figure class="capture-panel" id="gee-1" role="tabpanel" aria-labelledby="gee-1-tab">
+              <div class="capture-stage "><img src="assets/earth-engine-editor.png" alt="Code Editor de Google Earth Engine: script JavaScript, consola y mapa de temperatura ERA5." width="3456" draggable="false"></div>
+              <figcaption>Interfaz · ejemplo oficial de temperatura ERA5 (enero de 2023). <a href="https://developers.google.com/earth-engine/guides/quickstart_javascript" target="_blank" rel="noopener">Google · CC BY 4.0 ↗</a></figcaption>
+            </figure>
+            <figure class="capture-panel" id="gee-2" role="tabpanel" aria-labelledby="gee-2-tab" hidden>
+              <div class="capture-stage editor-code"><img src="assets/earth-engine-editor.png" alt="Detalle ampliado del script JavaScript oficial: selecciona datos ERA5 y añade una capa de temperatura." width="3456" draggable="false"></div>
+              <figcaption>Script · ampliación de la misma captura oficial; ejemplo didáctico ERA5. <a href="https://developers.google.com/earth-engine/guides/quickstart_javascript" target="_blank" rel="noopener">Google · CC BY 4.0 ↗</a></figcaption>
+            </figure>
+            <figure class="capture-panel" id="gee-3" role="tabpanel" aria-labelledby="gee-3-tab" hidden>
+              <div class="capture-stage editor-result"><img src="assets/earth-engine-editor.png" alt="Detalle ampliado del mapa de temperatura producido por el ejemplo ERA5 de Google." width="3456" draggable="false"></div>
+              <figcaption>Resultado · mapa de temperatura del ejemplo ERA5; no es Global Surface Water. <a href="https://developers.google.com/earth-engine/guides/quickstart_javascript" target="_blank" rel="noopener">Google · CC BY 4.0 ↗</a></figcaption>
+            </figure>
+            <figure class="capture-panel" id="gee-4" role="tabpanel" aria-labelledby="gee-4-tab" hidden>
+              <div class="capture-stage "><img src="assets/global-surface-water-change.png" alt="Cambios en la presencia de agua del río Ucayali, Perú: disminuciones en rojo y aumentos en verde." width="1080" draggable="false"></div>
+              <figcaption>Caso JRC · Ucayali, Perú · rojo: disminución; verde: aumento (1984–2015). <a href="https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_03" target="_blank" rel="noopener">EC JRC/Google · CC BY 4.0 ↗</a></figcaption>
+            </figure>
           </div></div>
-          <div class="vcred">Video: “Google Earth Engine 1: Introduction to Code Editor” — Terra Spatial (YouTube)</div>
         </div>
       </div>
+      <aside class="card case-note rv"><div><span class="tag">Caso real · Landsat · 1984–2021 (v1.4)</span><h3>Global Surface Water — Comisión Europea (JRC)</h3></div><p>Analizó millones de imágenes satelitales para estudiar cómo cambió la presencia de agua en ríos, lagos y otras superficies del planeta.</p></aside>
+      <div class="vcred rv">Ejemplos didácticos de Google; no son el código original del estudio JRC · Capturas publicadas, sin ejecución propia · R: fuentes</div>
     </div>
   </section>
 
@@ -763,6 +825,21 @@ h3{font-size:32px;font-weight:700;letter-spacing:-.02em}
     <a href="https://developers.google.com/earth-engine/guides/quickstart_javascript" target="_blank" rel="noopener">Earth Engine Code Editor — Quickstart (Google)</a>
     <a href="https://tecnobits.com/que-es-google-earth-engine/" target="_blank" rel="noopener">¿Qué es Google Earth Engine? — Tecnobits</a>
     <a href="https://www.g2.com/compare/arcgis-online-vs-carto" target="_blank" rel="noopener">ArcGIS Online vs CARTO — G2</a>
+    <h4>Diapositivas 4–6 · documentación y capturas</h4>
+    <a href="https://doc.arcgis.com/en/arcgis-online/get-started/get-started-with-mv.htm" target="_blank" rel="noopener">Get started with Map Viewer — interfaz — Esri</a>
+    <a href="https://learn.arcgis.com/en/projects/make-a-map/" target="_blank" rel="noopener">Make a map — ventana de compartir — Learn ArcGIS</a>
+    <a href="https://doc.arcgis.com/en/arcgis-online/share-maps/share-maps-mv.htm" target="_blank" rel="noopener">Compartir mapas y controlar el acceso — Esri</a>
+    <a href="https://doc.arcgis.com/en/arcgis-online/reference/faq.htm" target="_blank" rel="noopener">Cuentas públicas y organizacionales — Esri</a>
+    <a href="https://www.esri.com/en-us/lg/product/open-space-institute-case-study" target="_blank" rel="noopener">Open Space Institute — caso real y dashboard — Esri</a>
+    <a href="https://developers.google.com/earth-engine/guides/playground" target="_blank" rel="noopener">Code Editor y editor JavaScript — Google</a>
+    <a href="https://developers.google.com/earth-engine/guides/quickstart_javascript" target="_blank" rel="noopener">Quickstart JavaScript — captura ERA5 — Google</a>
+    <a href="https://developers.google.com/earth-engine/guides/noncommercial_tiers" target="_blank" rel="noopener">Acceso no comercial y condiciones — Google Earth Engine</a>
+    <a href="https://global-surface-water.appspot.com/" target="_blank" rel="noopener">Global Surface Water Explorer — Comisión Europea (JRC) / Google</a>
+    <a href="https://developers.google.com/earth-engine/datasets/catalog/JRC_GSW1_4_GlobalSurfaceWater" target="_blank" rel="noopener">JRC Global Surface Water v1.4 — Landsat, 1984–2021 — catálogo Google</a>
+    <a href="https://developers.google.com/earth-engine/tutorials/tutorial_global_surface_water_03" target="_blank" rel="noopener">Water Occurrence Change — captura didáctica, 1984–2015 — Google / JRC</a>
+    <a href="https://doi.org/10.1038/nature20584" target="_blank" rel="noopener">Pekel et al. (2016). High-resolution mapping of global surface water and its long-term changes. Nature.</a>
+    <a href="https://www.mapbox.com/maps" target="_blank" rel="noopener">Mapbox Maps — sitio oficial</a>
+    <a href="https://carto.com/platform" target="_blank" rel="noopener">CARTO — plataforma oficial</a>
     <h4>RustGIS</h4>
     <a href="https://github.com/opengeos/RustGIS" target="_blank" rel="noopener">RustGIS — GitHub (opengeos)</a>
     <a href="https://web.rustgis.app/" target="_blank" rel="noopener">RustGIS — web app</a>
@@ -823,6 +900,31 @@ function tileMap(el) {
   if (el.dataset.src !== 'gfw') { const p = document.createElement('span'); p.className = 'pin'; el.appendChild(p); }
 }
 $$('.tmap').forEach(tileMap);
+
+/* ====== capturas: selección manual, sin temporizadores ====== */
+$$('[data-gallery]').forEach(gallery => {
+  const tabs = [...gallery.querySelectorAll('[role="tab"]')];
+  const select = tab => {
+    tabs.forEach(button => {
+      const selected = button === tab;
+      button.setAttribute('aria-selected', String(selected));
+      button.tabIndex = selected ? 0 : -1;
+      document.getElementById(button.getAttribute('aria-controls')).hidden = !selected;
+    });
+  };
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', e => { e.stopPropagation(); select(tab); });
+    tab.addEventListener('keydown', e => {
+      // Los atajos generales siguen activos fuera de estas pestañas.
+      if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) {
+        e.preventDefault(); e.stopPropagation();
+        const next = e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1
+          : (index + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+        select(tabs[next]); tabs[next].focus();
+      } else if (e.key === 'Enter' || e.key === ' ') e.stopPropagation();
+    });
+  });
+});
 
 /* ====== videos (YouTube) ====== */
 const canEmbed = /^https?:$/.test(location.protocol);
